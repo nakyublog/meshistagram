@@ -1,12 +1,17 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>DeviseRails5</title>
-      
+  <head>
+    <title>Subkadai</title>
+    <%= csrf_meta_tags %>
 
-        <p class="notice"><%= notice %></p>
-        <p class="alert"><%= alert %></p>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
 
-        <%= yield %>
-    </body>
+  <body>
+    <%= yield %>
+    <%= render 'layouts/footer' %>
+     <%= debug(params) if Rails.env.development? %>
+  </body>
 </html>

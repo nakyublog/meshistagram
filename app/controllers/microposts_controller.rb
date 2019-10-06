@@ -5,10 +5,8 @@ class MicropostsController < ApplicationController
   end
   def show
      @micropost = Micropost.find(params[:id])
-    @comments = @micropost.comments
     @comment = Comment.new
-    #@comments = Comment.all
-    #@comment = current_user.comments.build
+    @comments = @micropost.comments
     @like = Like.new
   end
   def edit

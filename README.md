@@ -22,3 +22,8 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+作業手順
+日通知機能実装、
+月火水木金ぐるなびAPI利用して二郎データ保存、User has many Jiroを作り繋がる
+土日見た目整える、履歴書作成

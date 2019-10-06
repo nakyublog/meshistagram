@@ -1,18 +1,24 @@
 class LikesController < ApplicationController
-   def create
-    like=current_user.active_like.new(micropost_id:params[:micropost_id])
-    like.save
-    @micropost=Micropost.find(params[:micropost_id])
-    @micropost.create_notification_by(current_user)
-    respond_to do |format|
-      format.html {redirect_to request.referrer}
-      format.js
+  def create
+   @micropost = Micropost.find(params[:micropost_id])
+    unless @micropost.iine?(current_user)
+      @micropost.iine(current_user)
+      @micropost.create_notification_like!(current_user)
+      respond_to do |format|
+        format.html { redirect_to request.referrer || root_url }
+        format.js
+      end
     end
   end
 
   def destroy
-    @like = Like.find_by(micropost_id: params[:micropost_id], user_id: current_user.id)
-    @like.destroy
-    redirect_back(fallback_location: root_path)
+    @micropost = Like.find(params[:id]).micropost
+    if @micropost.iine?(current_user)
+      @micropost.uniine(current_user)
+      respond_to do |format|
+        format.html { redirect_to request.referrer || root_url }
+        format.js
+      end
+    end
   end
 end

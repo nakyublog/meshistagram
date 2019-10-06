@@ -38,6 +38,7 @@ gem 'mini_magick',             '4.7.0'
 gem 'faker'
 gem 'will_paginate',           '3.1.8'
 gem 'fog',                     '1.36.0'
+gem 'rails-ujs'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
