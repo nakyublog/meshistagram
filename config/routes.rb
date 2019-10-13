@@ -7,6 +7,10 @@ Rails.application.routes.draw do
   post 'home/show'
   get 'home/show', to: 'home#post'
   get 'home/post'
+  post 'home/word'
+  get 'home/word', to: 'home#search'
+  get 'home/search'
+
   root to: "home#index"
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
   resources :users do
