@@ -1,2 +1,17 @@
-<h1>こんにちは、<%= current_user.username %>さん</h1>
-<p>ユーザー用ページです。</p>
+<% if @result["rest"] != nil %>
+<% x=0 %>
+<% while x<=20 do %>
+<div>
+<%=link_to "#{@result_name[x]}","#{@result_url[x]}" %>
+</div>
+<% x+=1 %>
+<% end %>
+<% else %>
+結果はありません
+
+<% end %>
+
+<div>
+</br>
+<%= link_to "検索に戻る","/home/post" %>
+</div>

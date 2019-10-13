@@ -4,6 +4,9 @@ Rails.application.routes.draw do
   get 'users/index'
   get 'notifications/index'
   get 'microposts/index'
+  post 'home/show'
+  get 'home/show', to: 'home#post'
+  get 'home/post'
   root to: "home#index"
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
   resources :users do
