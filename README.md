@@ -23,8 +23,5 @@ Things you may want to cover:
 
 * ...
 
-作業手順
-日 has many jirou を作る。その登録は店名とURLにして、マイ二郎に登録する、店名とURLは検索フォームから引っ張ってくる
-月 見た目整え
-火 その他資料作成
-
+docker compose build --no cache をしてから docker compose upをする。
+その際、server pid にキャッシュが残っていないか確認する。

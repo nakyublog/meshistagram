@@ -1,15 +1,20 @@
 Rails.application.routes.draw do
+  get 'jirous/create'
   get 'relationships/create'
   get 'relationships/destroy'
   get 'users/index'
   get 'notifications/index'
   get 'microposts/index'
-  post 'home/show'
-  get 'home/show', to: 'home#post'
-  get 'home/post'
-  post 'home/word'
-  get 'home/word', to: 'home#search'
-  get 'home/search'
+  
+  
+  get 'jirous/post'
+  post 'jirous/word'
+  get 'jirous/word', to: 'jirous#search'
+  get 'jirous/search'
+  post 'jirous/create'
+  get 'jirous/shoplist'
+  get 'jirous/wordlist'
+  delete 'jirous/:id' , to: 'jirous#destroy'
 
   root to: "home#index"
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }

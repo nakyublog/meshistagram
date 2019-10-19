@@ -1,0 +1,28 @@
+<% if @result["rest"] != nil %>
+<% x=0 %>
+<% while x<=20 do %>
+  <%=link_to "#{@result_name[x]}","#{@result_url[x]}" %>
+  <%= link_to image_tag("#{@result_image_url[x]}"), "#{@result_url[x]}" %>
+  <%= form_for @jirou, url: jirous_create_path do |f| %>
+    <%= render 'shared/error_messages', object: f.object %>
+    <div class="field">
+      <%= f.hidden_field :name, :value => "#{@result_name[x]}" %>
+      <%= f.hidden_field :url, :value => "#{@result_url[x]}" %>
+      <%= f.hidden_field :user_id, :value => "#{current_user.id}" %>
+    </div>
+    <% unless @result_name[x] == nil %>
+    <%= f.submit "my二郎に追加", class: "btn btn-primary" %>
+    <% end %>
+  <% end %>
+</div>
+<% x+=1 %>
+<% end %>
+<% else %>
+結果はありません
+
+<% end %>
+
+<div>
+</br>
+<%= link_to "検索に戻る","/jirous/post" %>
+</div>
