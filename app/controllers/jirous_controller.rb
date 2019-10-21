@@ -1,4 +1,5 @@
 class JirousController < ApplicationController
+  before_action :authenticate_user!	
    protect_from_forgery
   require 'net/http'
   require 'uri'
