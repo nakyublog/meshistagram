@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get 'jirous/create'
+  get 'jirous/index'
   get 'relationships/create'
   get 'relationships/destroy'
   get 'users/index'

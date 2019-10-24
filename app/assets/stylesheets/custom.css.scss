@@ -11,6 +11,7 @@ $gray-medium-light: #eaeaea;
   box-sizing:         border-box;
 }
 
+
 /* miscellaneous */
 
 .debug_dump {
@@ -131,5 +132,22 @@ aside {
     overflow: auto;
     padding: 10px 0;
     border-bottom: 1px solid $gray-lighter;
+  }
+}
+.jumbotron{
+  background-image: url("/images/steak.jpg");
+  background-size: cover;
+  height: 610px;
+  h1{color: yellow;
+  }
+  h2{color: yellow;
+  }
+  margin-bottom: 0em
+}
+.footer{
+  background-color:black;
+  li{
+    color:yellow;
+    font-size:30px;
   }
 }
