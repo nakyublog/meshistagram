@@ -25,3 +25,6 @@ Things you may want to cover:
 
 docker compose build --no cache をしてから docker compose upをする。
 その際、server pid にキャッシュが残っていないか確認する。
+
+金deviseのusername追加→フロント整え→
+土日テストデータ追加→テスト追加→デプロイ
