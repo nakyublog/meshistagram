@@ -27,9 +27,15 @@ aside {
   section.user_info {
     margin-top: 20px;
   }
+  section.mymeshi{
+    margin-top:0px;
+    h3{
+      margin-top:0px;
+    }
+  }
   section {
     padding: 10px 0;
-    margin-top: 20px;
+    margin-top: 0px;
     &:first-child {
       border: 0;
       padding-top: 0;
@@ -139,15 +145,39 @@ aside {
   background-size: cover;
   height: 610px;
   h1{color: yellow;
+    text-align: center;
   }
   h2{color: yellow;
+    text-align: center;
+  }
+  .btn{
+
   }
   margin-bottom: 0em
+  
 }
 .footer{
-  background-color:black;
+  background-color:white;
   li{
-    color:yellow;
+    
     font-size:30px;
   }
+}
+.user_info{
+  width: 100%;
+}
+.notification{
+  background-color:silver;
+}
+header {
+  overflow: hidden;
+    li{float: left;
+      margin-left: 50px;
+      
+    }
+  }
+header ul li{
+  padding-top: 30px;
+  display: inline;
+  font-size: 20px;
 }

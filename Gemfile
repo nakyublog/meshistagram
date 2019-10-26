@@ -41,6 +41,9 @@ gem 'fog',                     '1.36.0'
 gem 'rails-ujs'
 gem 'font-awesome-rails'
 gem 'kaminari'
+gem 'rspec-rails'
+gem "factory_bot_rails"
+gem 'jquery-rails'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 

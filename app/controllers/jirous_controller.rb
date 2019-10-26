@@ -11,15 +11,15 @@ class JirousController < ApplicationController
     
   
   def create
-    if current_user.jirous.count <=5
+    if current_user.jirous.count <=4
     @jirou = Jirou.new(jirou_params)
-    if @jirou.save
-      flash[:success] = "Micropost created!"
-      redirect_to root_url
-    else
+      if @jirou.save
+        flash[:success] = "Micropost created!"
+        redirect_to root_url
+      else
       
       render 'jirous/shoplist'
-    end
+      end
     else
       flash[:success] = "お気に入りは５個まで"
       redirect_to root_url
@@ -99,6 +99,6 @@ class JirousController < ApplicationController
   private
 
     def jirou_params
-      params.require(:jirou).permit(:name, :url , :user_id)
+      params.require(:jirou).permit(:name, :url , :user_id, :image_url)
     end
 end

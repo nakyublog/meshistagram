@@ -9,10 +9,11 @@
     <div class="field">
       <%= f.hidden_field :name, :value => "#{@result_name[x]}" %>
       <%= f.hidden_field :url, :value => "#{@result_url[x]}" %>
+      <%= f.hidden_field :image_url, :value => "#{@result_image_url[x]}" %>
       <%= f.hidden_field :user_id, :value => "#{current_user.id}" %>
     </div>
     <% unless @result_name[x] == nil %>
-    <%= f.submit "my二郎に追加", class: "btn btn-primary" %>
+    <%= f.submit "myメシに追加", class: "btn btn-primary" %>
     <% end %>
   <% end %>
 </div>

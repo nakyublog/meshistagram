@@ -1,6 +1,6 @@
 <%if user_signed_in? %>
   <div class="row">
-    <aside class="col-md-4">
+    <div class="col-lg-4 col-md-6 ml-auto mr-auto">
       <section class="user_info">
         <%= render 'shared/user_info' %>
       </section>
@@ -10,20 +10,23 @@
       <section class="micropost_form">
         <%= render 'shared/micropost_form' %>
       </section>
-    <% current_user.jirous.each do |shop| %>
-        <div><%= link_to shop.name, "#{shop.url}" %> 
-        <%= link_to '削除', "/jirous/#{shop.id.to_i}", method: :delete,  data: { confirm: "削除してよろしいですか？", commit: "削除する", cancel: "やめる", title: "ご確認ください" } %></div>
-
-    <% end %>
-    </aside>
-    <div class="col-md-8">
+      <section class="mymeshi">
+      <%= render 'shared/myjirou' %>
+      </section>
+    </div>
+    <div class="col-lg-4 col-md-6 ml-auto mr-auto">
       <h3>Micropost Feed</h3>
-      <%= current_user.username %>
       <%= render 'shared/feed' %>
     </div>
+    <div class="col-lg-4 col-md-6 ml-auto mr-auto">
+      <h3>お店を検索してmyメシに加えよう！</h3>
+      <%= link_to "店名で検索",   "/jirous/post" %><br/>
+      <%= link_to "キーワード検索",   "/jirous/search" %>
+    </div>
+
   </div>
    <%= link_to "Sign out", destroy_user_session_path, :method => :delete%>
-   <%= render 'shared/header' %>
+   <%= render 'shared/notifications' %>
 <% else %>
   <div class="center jumbotron">
     <h1>Meshistagram</h1>
@@ -31,8 +34,9 @@
     <h2>
       こだわりのメシを投稿して、お店を共有しよう！
     </h2>
-
+    <div style="text-align:center;"></br>
     <%= link_to "登録する！", "/users/sign_up", class: "btn btn-lg btn-warning" %>
+    </div>
   </div>
 
   

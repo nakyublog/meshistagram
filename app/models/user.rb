@@ -10,7 +10,7 @@ class User < ApplicationRecord
   has_many :active_notifications, class_name: "Notification", foreign_key: "visitor_id", dependent: :destroy
   has_many :passive_notifications, class_name: "Notification", foreign_key: "visited_id", dependent: :destroy
   has_many :likes, dependent: :destroy
-  has_many :liked_posts, through: :likes, source: :post,  dependent: :destroy
+  has_many :liked_posts, through: :likes, source: :micropost
   has_many :comments,  dependent: :destroy
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :omniauthable, :confirmable
@@ -18,7 +18,7 @@ class User < ApplicationRecord
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
       user.provider = auth.provider
       user.uid = auth.uid
-      user.name = auth.name
+      user.username = auth.info.name
       user.email = auth.info.email
       user.password = Devise.friendly_token[0, 20] # ランダムなパスワードを作成
       user.image = auth.info.image.gsub("_normal","") if user.provider == "twitter"
@@ -53,7 +53,7 @@ class User < ApplicationRecord
   end
   def self.search(search) #ここでのself.はUser.を意味する
     if search
-      where(['name LIKE ?', "%#{search}%"]) #検索とnameの部分一致を表示。User.は省略
+      where(['username LIKE ?', "%#{search}%"]) #検索とnameの部分一致を表示。User.は省略
     else
       all #全て表示。User.は省略
     end

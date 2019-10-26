@@ -1,8 +1,9 @@
-<h3> my二郎 </h3>
+<h3> my メシ </h3>
 <% unless @user.jirous.empty? %>
-  <% @user.jirous.each do |jirou| %>
+  <% @user.jirous.each do |shop| %>
 
-    <%= jirou.name %>
-
+    <div><%= link_to shop.name, "#{shop.url}" %> 
+        <%= link_to '削除', "/jirous/#{shop.id.to_i}", method: :delete,  data: { confirm: "削除してよろしいですか？", commit: "削除する", cancel: "やめる", title: "ご確認ください" } %></div>
+    <div><%= link_to image_tag("#{shop.image_url}"), "#{shop.url}" %></div>
   <% end %>
 <% end %>

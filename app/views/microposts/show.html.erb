@@ -1,6 +1,5 @@
 <h1>投稿詳細ページ</h1>
-<h3><%= @micropost.user.name %></h3>
-<h3><%= @micropost.user.email %></h3>
+<h3><%= @micropost.user.username %></h3>
 <h3><%= @micropost.content %></h3>
 <%= image_tag @micropost.img.url if @micropost.img?%>
 
@@ -9,7 +8,7 @@
 <% @comments.each do |c| %>
   <div>
     
-    <a href="/users/<%= @micropost.user.id %>"><%= c.user.email %></a>
+    <a href="/users/<%= @micropost.user.id %>"><%= c.user.username %></a>
     <%= c.content %>
     <hr>
   </div>
