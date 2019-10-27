@@ -15,13 +15,15 @@
       </section>
     </div>
     <div class="col-lg-4 col-md-6 ml-auto mr-auto">
-      <h3>Micropost Feed</h3>
+      <h3>みんなの投稿</h3>
       <%= render 'shared/feed' %>
     </div>
     <div class="col-lg-4 col-md-6 ml-auto mr-auto">
       <h3>お店を検索してmyメシに加えよう！</h3>
       <%= link_to "店名で検索",   "/jirous/post" %><br/>
-      <%= link_to "キーワード検索",   "/jirous/search" %>
+      <%= link_to image_tag("/assets/shopname.jpg", :size =>'360x240'), "/jirous/post" %><br/>
+      <%= link_to "キーワード検索",   "/jirous/search" %><br/>
+      <%= link_to image_tag("/assets/rename2.jpg", :size =>'360x240'), "/jirous/search" %>
     </div>
 
   </div>

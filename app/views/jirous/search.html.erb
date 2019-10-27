@@ -1,17 +1,21 @@
-<form method="get" action="/jirous/wordlist">
-<p>
- ワード：<input type="text" name="food" /><br />
- </p>
- <p>
- 都道府県：<select name="pref">
-<option value="&#38;pref=PREF13">東京都</option>
-<option value="&#38;pref=PREF14">神奈川県</option>
-<option value="&#38;pref=PREF27">大阪府</option>
-<option value="&#38;pref=PREF23">愛知県</option>
-<option value="&#38;pref=PREF11">埼玉県</option>
-</select>
-<br />
- <input type="submit" value="送信" />
- </p>
-
-</form>
+<div class="row">
+  <div class="col-lg-4 col-md-6 ml-auto mr-auto">
+  <h2>キーワード検索</h2>
+    <form method="get" action="/jirous/wordlist">
+    <p>
+    ワード：<input type="text" name="food" class='control-label'/>(例：ニンニク)<br />
+    </p>
+    <p>
+    都道府県：<select name="pref" class:'control-label'>
+    <option value="&#38;pref=PREF13">東京都</option>
+    <option value="&#38;pref=PREF14">神奈川県</option>
+    <option value="&#38;pref=PREF27">大阪府</option>
+    <option value="&#38;pref=PREF23">愛知県</option>
+    <option value="&#38;pref=PREF11">埼玉県</option>
+    </select>
+    <br />
+    <input type="submit" value="送信" />
+    </p>
+    </form>
+  </div>
+</div>

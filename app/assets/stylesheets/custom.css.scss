@@ -168,6 +168,10 @@ aside {
 }
 .notification{
   background-color:silver;
+  height: 80px;
+  .btn{
+    font-size: 30px
+  }
 }
 header {
   overflow: hidden;
@@ -181,3 +185,4 @@ header ul li{
   display: inline;
   font-size: 20px;
 }
+

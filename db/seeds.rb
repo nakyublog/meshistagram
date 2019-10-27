@@ -1,17 +1,20 @@
-User.create!(username:  "Example User",
+user1=User.new(username:  "Example User",
              email: "example@railstutorial.org",
              password:              "foobar",
              password_confirmation: "foobar",
              admin:     true)
-
+user1.skip_confirmation!
+user1.save
 99.times do |n|
   name  = Faker::Name.name
   email = "example-#{n+1}@railstutorial.org"
   password = "password"
-  User.create!(username:  name,
+  user2=User.new(username:  name,
                email: email,
                password:              password,
                password_confirmation: password)
+  user2.skip_confirmation!
+  user2.save
 end
 
 # マイクロポスト

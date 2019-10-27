@@ -29,3 +29,5 @@ docker compose build --no cache をしてから docker compose upをする。
 
 土フロント整えテストデータ追加→テスト追加→デプロイ→書類作成
 日チェック
+4fa053c9f351 sampleapp_web_1
+469e629941b1 sampleapp_db_1

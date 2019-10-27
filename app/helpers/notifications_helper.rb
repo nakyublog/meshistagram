@@ -1,8 +1,8 @@
 module NotificationsHelper
   def notification_form(notification)
     @comment=nil
-    visitor=link_to User.find_by(id:notification.visitor_id).name, User.find_by(id:notification.visitor_id), style:"font-weight: bold;"
-    your_post=link_to 'あなたの投稿', notification.micropost, style:"font-weight: bold;", remote: true
+    visitor=link_to User.find_by(id:notification.visitor_id).username, User.find_by(id:notification.visitor_id), style:"font-weight: bold;"
+    your_post=link_to 'あなたの投稿', notification.micropost, style:"font-weight: bold;"
     case notification.action
       when "follow" then
         "#{visitor}があなたをフォローしました"
