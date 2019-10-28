@@ -5,6 +5,7 @@ class Micropost < ApplicationRecord
   has_many :liked_users, through: :likes, source: :user
   has_many :comments
   mount_uploader :img, ImgUploader
+  default_scope -> { order(created_at: :desc) }
   def create_notification_like!(current_user)
     # すでに「いいね」されているか検索
     temp = Notification.where(["visitor_id = ? and visited_id = ? and micropost_id = ? and action = ? ", current_user.id, user_id, id, 'like'])

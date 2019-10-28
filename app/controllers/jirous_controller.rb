@@ -31,7 +31,7 @@ class JirousController < ApplicationController
   def word
         
     ur = params[:word].to_s
-    urh = 'https://api.gnavi.co.jp/RestSearchAPI/v3/?keyid=3b0aa19c029fbf07ed9b5e2fbafb6c4f&freeword='
+    urh = 'https://api.gnavi.co.jp/RestSearchAPI/v3/?keyid='+ENV['GURUNABI_SECRET_KEY']+'&freeword='
     urh += ur
     uri = URI.encode(urh)
     url= URI.parse(uri)
@@ -55,7 +55,7 @@ class JirousController < ApplicationController
   end
   def shoplist
     
-    urh = 'https://api.gnavi.co.jp/RestSearchAPI/v3/?keyid=3b0aa19c029fbf07ed9b5e2fbafb6c4f&name='
+    urh = 'https://api.gnavi.co.jp/RestSearchAPI/v3/?keyid='+ENV['GURUNABI_SECRET_KEY']+'&name='
     urh += params[:food].to_s
     urh += params[:pref].to_s
     uri = URI.encode(urh)
@@ -72,7 +72,7 @@ class JirousController < ApplicationController
   end
 
   def wordlist
-        urh = 'https://api.gnavi.co.jp/RestSearchAPI/v3/?keyid=3b0aa19c029fbf07ed9b5e2fbafb6c4f&freeword='
+        urh = 'https://api.gnavi.co.jp/RestSearchAPI/v3/?keyid='+ENV['GURUNABI_SECRET_KEY']+'&freeword='
     urh += params[:food].to_s
     urh += params[:pref].to_s
     uri = URI.encode(urh)
