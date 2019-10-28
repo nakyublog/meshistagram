@@ -24,6 +24,9 @@ class User < ApplicationRecord
       user.image = auth.info.image.gsub("_normal","") if user.provider == "twitter"
       user.image = auth.info.image.gsub("picture","picture?type=large") if user.provider == "facebook"
     end
+    user.skip_confirmation!
+    user.save
+    user
   end
   def follow(other_user)
     following << other_user
