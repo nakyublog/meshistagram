@@ -26,26 +26,6 @@ class JirousController < ApplicationController
     end
   end
 
- 
-
-  def word
-        
-    ur = params[:word].to_s
-    urh = 'https://api.gnavi.co.jp/RestSearchAPI/v3/?keyid='+ENV['GURUNABI_SECRET_KEY']+'&freeword='
-    urh += ur
-    uri = URI.encode(urh)
-    url= URI.parse(uri)
-    json = Net::HTTP.get(url)
-    @result = JSON.parse(json)
-    unless @result["rest"].nil?
-    @result_name = @result["rest"].map{|a|a["name"]}
-    @result_url = @result["rest"].map{|b|b["url"]}
-    @result_image_url = @result["rest"].map{|c|c["image_url"]["shop_image1"]}
-    redirect_to action: 'wordlist'
-    end
-
-
-  end
   def  post
       
   end

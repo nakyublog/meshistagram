@@ -4,21 +4,25 @@ RSpec.feature 'home', type: :feature do
   let(:user) { create(:user) }
   let(:jirou) { create(:jirou, user: user) }
   let(:micropost) { create(:micropost) }
-
+  before do
+      user.confirmed_at = Time.zone.now
+      user.save
+      login_user user
+  end
   background do
-    visit potepan_category_path(id: taxon.id)
+    
+    visit root_path
   end
 
-  scenario 'User visits product detail page' do
-    expect(page).to have_link product.name
-    click_on product.name
-    expect(current_path).to eq potepan_product_path(product.id)
+  scenario 'User visits home page' do
+    expect(page).to have_link user.jirou
+    expect(current_path).to eq root_path
   end
 
-  scenario 'Expected information is displayed on the category page' do
-    within '.productBox' do
-      expect(page).to have_content product.name
-      expect(page).to have_content product.display_price
+  scenario 'Expected jirou is displayed on the home page' do
+    within '.mymeshi' do
+      expect(page).to have_content jirou.name
+      expect(page).to have_content jirou.url
     end
   end
 end

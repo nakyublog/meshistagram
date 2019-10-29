@@ -4,6 +4,7 @@
       <li><%= link_to "ホームに戻る",   root_path %></li>
       <li><%= link_to "店名で検索",   "/jirous/post" %></li>
       <li><%= link_to "キーワード検索",   "/jirous/search" %></li>
+      <li><%= link_to "ログアウト", destroy_user_session_path, :method => :delete%></li>
     </ul>
   </nav>
 </footer>

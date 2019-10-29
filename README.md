@@ -25,9 +25,3 @@ Things you may want to cover:
 
 docker compose build --no cache をしてから docker compose upをする。
 その際、server pid にキャッシュが残っていないか確認する。
-
-
-土フロント整えテストデータ追加→テスト追加→デプロイ→書類作成
-日チェック
-4fa053c9f351 sampleapp_web_1
-469e629941b1 sampleapp_db_1
