@@ -7,7 +7,7 @@ RSpec.feature 'home', type: :feature do
   before do
       user.confirmed_at = Time.zone.now
       user.save
-      login_user user
+      sign_in user
   end
   background do
     
@@ -15,7 +15,7 @@ RSpec.feature 'home', type: :feature do
   end
 
   scenario 'User visits home page' do
-    expect(page).to have_link user.jirou
+    expect(page).to have_link user.jirous.first
     expect(current_path).to eq root_path
   end
 
