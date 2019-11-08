@@ -35,7 +35,7 @@ class JirousController < ApplicationController
   end
   def shoplist
     
-    urh = 'https://api.gnavi.co.jp/RestSearchAPI/v3/?keyid='+ENV['GURUNABI_SECRET_KEY']+'&name='
+    urh = 'https://api.gnavi.co.jp/RestSearchAPI/v3/?keyid='+ENV['GURUNABI_SECRET_KEY'].to_s+'&name='
     urh += params[:food].to_s
     urh += params[:pref].to_s
     uri = URI.encode(urh)
