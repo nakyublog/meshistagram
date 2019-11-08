@@ -12,7 +12,10 @@
 
 ActiveRecord::Schema.define(version: 2019_10_25_145733) do
 
-  create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "comments", force: :cascade do |t|
     t.string "content"
     t.bigint "user_id"
     t.bigint "micropost_id"
@@ -22,7 +25,7 @@ ActiveRecord::Schema.define(version: 2019_10_25_145733) do
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
-  create_table "jirous", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "jirous", force: :cascade do |t|
     t.string "name"
     t.text "url"
     t.bigint "user_id"
@@ -32,7 +35,7 @@ ActiveRecord::Schema.define(version: 2019_10_25_145733) do
     t.index ["user_id"], name: "index_jirous_on_user_id"
   end
 
-  create_table "likes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "likes", force: :cascade do |t|
     t.bigint "micropost_id"
     t.bigint "user_id"
     t.datetime "created_at", null: false
@@ -41,7 +44,7 @@ ActiveRecord::Schema.define(version: 2019_10_25_145733) do
     t.index ["user_id"], name: "index_likes_on_user_id"
   end
 
-  create_table "microposts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "microposts", force: :cascade do |t|
     t.text "content"
     t.bigint "user_id"
     t.datetime "created_at", null: false
@@ -52,7 +55,7 @@ ActiveRecord::Schema.define(version: 2019_10_25_145733) do
     t.index ["user_id"], name: "index_microposts_on_user_id"
   end
 
-  create_table "notifications", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "notifications", force: :cascade do |t|
     t.integer "visitor_id", null: false
     t.integer "visited_id", null: false
     t.integer "micropost_id"
@@ -67,7 +70,7 @@ ActiveRecord::Schema.define(version: 2019_10_25_145733) do
     t.index ["visitor_id"], name: "index_notifications_on_visitor_id"
   end
 
-  create_table "relationships", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "relationships", force: :cascade do |t|
     t.integer "follower_id"
     t.integer "followed_id"
     t.datetime "created_at", null: false
@@ -77,7 +80,7 @@ ActiveRecord::Schema.define(version: 2019_10_25_145733) do
     t.index ["follower_id"], name: "index_relationships_on_follower_id"
   end
 
-  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
