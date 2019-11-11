@@ -1,6 +1,6 @@
 <%if user_signed_in? %>
   <div class="row">
-    <div class="col-lg-4 col-md-6 ml-auto mr-auto">
+    <div class="col-lg-4 col-md-6 col-sm-12 ml-auto mr-auto">
       <section class="user_info">
         <%= render 'shared/user_info' %>
       </section>
@@ -14,11 +14,11 @@
       <%= render 'shared/myjirou' %>
       </section>
     </div>
-    <div class="col-lg-4 col-md-6 ml-auto mr-auto">
+    <div class="col-lg-4 col-md-6 col-sm-12 ml-auto mr-auto">
       <h3>みんなのつぶやき</h3>
       <%= render 'shared/feed' %>
     </div>
-    <div class="col-lg-4 col-md-6 ml-auto mr-auto">
+    <div class="col-lg-4 col-md-6 col-sm-12 ml-auto mr-auto">
       <h3>お店を検索してmyメシに加えよう！</h3>
       <%= link_to "店名で検索",   "/jirous/post" %><br/>
       <%= link_to image_tag("/assets/shopname.jpg", :size =>'360x240'), "/jirous/post" %><br/>
@@ -37,7 +37,13 @@
     </h2>
     <div style="text-align:center;"></br>
     <%= link_to "登録する！", "/users/sign_up", class: "btn btn-lg btn-warning" %>
+    <%= form_for(User.new, url:user_session_path) do |f| %>
+  <%= f.hidden_field :email, value: "example@railstutorial.org" %>
+  <%= f.hidden_field :password, value: "foobar" %>
+  <%= f.submit "かんたんログイン", class:"btn btn-lg center-block btn-success"%> 
+<% end %>
     </div>
+
   </div>
 
   
