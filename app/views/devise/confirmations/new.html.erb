@@ -1,17 +1,17 @@
 <div class="row">
   <div class="col-lg-4 col-md-6 ml-auto mr-auto">
-    <h2 class="text-center"><%= t('.resend_confirmation_instructions') %></h2>
+    <h2 class="text-center"><%= t('.登録メールの再送信') %></h2>
 
     <%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
       <%= devise_error_messages! %>
 
       <div class="form-group">
-        <%= f.label :email %><br />
+        <%= f.label :メールアドレス %><br />
         <%= f.email_field :email, autofocus: true, class: 'form-control', value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email) %>
       </div>
 
       <div class="actions">
-        <%= f.submit ('resend_confirmation_instructions'), class: 'btn btn-primary btn-lg btn-block' %>
+        <%= f.submit ('登録メールを再送信する'), class: 'btn btn-primary btn-lg btn-block' %>
       </div>
     <% end %>
 

@@ -1,7 +1,8 @@
 <% if @result["rest"] != nil %>
+<div class="row">
 <% x=0 %>
-<% while x<=100 do %>
-<div>
+<% while x<=30 do %>
+  <div class="col-lg-4 col-md-6 col-sm-12 ml-auto mr-auto">
   <%=link_to "#{@result_name[x]}","#{@result_url[x]}" %>
   <%= link_to image_tag("#{@result_image_url[x]}"), "#{@result_url[x]}" %>
   <%= form_for @jirou, url: jirous_create_path do |f| %>
@@ -16,15 +17,14 @@
     <%= f.submit "myメシに追加", class: "btn btn-primary" %>
     <% end %>
   <% end %>
+  </div>
+  <% x+=1 %>
+<% end %>
 </div>
-<% x+=1 %>
-<% end %>
+</div>
 <% else %>
-結果はありません
-
+  結果はありません
 <% end %>
-
-<div>
-</br>
-<%= link_to "検索に戻る","/jirous/search" %>
+<div><br>
+  <%= link_to "検索に戻る","/jirous/search" , :style=>"color:green; font-size:30px;"%>
 </div>

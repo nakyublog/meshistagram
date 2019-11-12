@@ -7,9 +7,6 @@ class JirousController < ApplicationController
   def index
 
   end
-    
-    
-  
   def create
     if current_user.jirous.count <=4
     @jirou = Jirou.new(jirou_params)
@@ -17,7 +14,6 @@ class JirousController < ApplicationController
         flash[:success] = "Micropost created!"
         redirect_to root_url
       else
-      
       render 'jirous/shoplist'
       end
     else
@@ -73,11 +69,8 @@ class JirousController < ApplicationController
       @jirou = Jirou.find(params[:id])
       @jirou.destroy
       redirect_to root_path
-
-
-  end
+¥  end
   private
-
     def jirou_params
       params.require(:jirou).permit(:name, :url , :user_id, :image_url)
     end

@@ -141,13 +141,14 @@ aside {
   }
 }
 .jumbotron{
-  background-image: url("/images/steak.jpg");
+  background-image: url("/images/topimage.jpg");
   background-size: cover;
+  margin:0 auto;
   height: 610px;
-  h1{color: yellow;
+  h1{color: black;
     text-align: center;
   }
-  h2{color: yellow;
+  h2{color: black;
     text-align: center;
   }
   .btn{

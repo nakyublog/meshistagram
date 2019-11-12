@@ -8,10 +8,6 @@ class HomeController < ApplicationController
     @micropost = current_user.microposts.build
     @feed_items = current_user.feed.paginate(page: params[:page],:per_page => 5)
     @jirou = current_user.jirous
+    end
   end
-end
-  
-
-
-  
 end

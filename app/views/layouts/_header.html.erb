@@ -10,7 +10,7 @@
           <li><%= link_to "プロフィール", current_user %></li>
           <li><%= link_to "ユーザ設定", edit_user_path(current_user) %></li>
         <% else %>
-          <li><%= link_to t(".sign_in"), new_session_path(resource_name) %></li>
+          <li><%= link_to t(".ログイン"), new_session_path(resource_name) %></li>
         <% end %>
       </ul>
     </div>

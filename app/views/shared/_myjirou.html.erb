@@ -3,7 +3,7 @@
   <% @user.jirous.each do |shop| %>
 
     <div><%= link_to shop.name, "#{shop.url}" %> 
-        <%= link_to '削除', "/jirous/#{shop.id.to_i}", method: :delete,  data: { confirm: "削除してよろしいですか？", commit: "削除する", cancel: "やめる", title: "ご確認ください" } %></div>
+        <%= link_to '削除', "/jirous/#{shop.id.to_i}", method: :delete,  data: { confirm: "削除してよろしいですか？", commit: "削除する", cancel: "やめる", title: "ご確認ください" }, :style=>"color:red; font-size:10px;" %></div>
     <div><%= link_to image_tag("#{shop.image_url}"), "#{shop.url}" %></div>
   <% end %>
 <% end %>
