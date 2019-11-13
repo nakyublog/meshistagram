@@ -69,7 +69,7 @@ class JirousController < ApplicationController
       @jirou = Jirou.find(params[:id])
       @jirou.destroy
       redirect_to root_path
-¥  end
+  end
   private
     def jirou_params
       params.require(:jirou).permit(:name, :url , :user_id, :image_url)
