@@ -1,27 +1,38 @@
-# README
+# Meshistagram - こだわりのメシを投稿して、お店を共有しよう！ -
+<img width="1676" alt="Top page" src="https://user-images.githubusercontent.com/51078777/69052557-aaf10000-0a4a-11ea-96e6-9a0a55406288.png">
+<img width="1678" alt="home page" src="https://user-images.githubusercontent.com/51078777/69052635-de338f00-0a4a-11ea-8b1c-7ad00d53c845.png">
+# アプリケーション概要
+Meshistagramは、自分のこだわりのレストランを検索して皆と共有するためのSNSアプリケーションです。
+<br>このアプリの利用ユーザーは、都市圏の老若男女を想定しております。
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# アプリケーションURL
+https://meshistagram.herokuapp.com/
+<br>ログイン画面の「かんたんログイン」ボタンからテストユーザーとして利用可能です。
 
-Things you may want to cover:
+# アプリケーション機能一覧
+* ユーザー関連
+  * ログイン・ログアウト
+  * OAuth認証(Facebook)
+  * プロフィール編集
+  * 通知機能（フォロー、いいね、コメント）
+  * ユーザー検索
+  * ユーザーフォロー
+  * 画像投稿機能
+  * つぶやき機能
+  * いいね機能
+  * フォロー・フォロワー一覧表示
+  * コメント投稿（つぶやきに対して）
+* レストラン関連
+  * レストラン検索（店名）
+  * レストラン検索（フリーワード）
+  * レストランお気に入り登録（myメシ）
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-docker compose build --no cache をしてから docker compose upをする。
-その際、server pid にキャッシュが残っていないか確認する。
+# 使用技術
+* Ruby 2.5.3
+* Rails 5.2.2
+* Docker
+* Docker Compose
+* Heroku
+* CircleCI（自動テスト自動デプロイ）
+* Facebook API
+* ぐるなび API
