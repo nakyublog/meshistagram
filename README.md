@@ -1,6 +1,7 @@
 # Meshistagram - こだわりのメシを投稿して、お店を共有しよう！ -
 <img width="1676" alt="Top page" src="https://user-images.githubusercontent.com/51078777/69052557-aaf10000-0a4a-11ea-96e6-9a0a55406288.png">
 <img width="1678" alt="home page" src="https://user-images.githubusercontent.com/51078777/69052635-de338f00-0a4a-11ea-8b1c-7ad00d53c845.png">
+
 # アプリケーション概要
 Meshistagramは、自分のこだわりのレストランを検索して皆と共有するためのSNSアプリケーションです。
 <br>このアプリの利用ユーザーは、都市圏の老若男女を想定しております。
