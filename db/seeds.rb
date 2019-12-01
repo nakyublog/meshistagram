@@ -1,4 +1,4 @@
-user1=User.new(username:  "Example User",
+user1=User.new(username:  "メシス太郎",
              email: "example@railstutorial.org",
              password:              "foobar",
              password_confirmation: "foobar",
